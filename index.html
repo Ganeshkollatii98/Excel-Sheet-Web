@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<link>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<title>Excel</title>
+</head>
+
+<body>
+    <div class="page-actions-cont">
+        <div class="page-action">Home</div>
+        <div class="page-action">File</div>
+        <div class="page-action">Insert</div>
+        <div class="page-action">Layout</div>
+        <div class="page-action">Help</div>
+    </div>
+    <div class="cellprop-actions-cont">
+        <span class="material-symbols-outlined">
+            content_copy
+        </span>
+        <span class="material-symbols-outlined">
+            content_paste
+        </span>
+        <select id="fontSelector" class="font-family-prop">
+            <option value="Arial">Arial</option>
+            <option value="Helvetica">Helvetica</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Tahoma">Tahoma</option>
+            <option value="Trebuchet MS">Trebuchet MS</option>
+            <option value="Arial Black">Arial Black</option>
+            <option value="Impact">Impact</option>
+        </select>
+        <select id="fontSizeSelector" class="font-size-group">
+            <option value="1px">1px</option>
+            <option value="5px">5px</option>
+            <option value="10px">10px</option>
+            <option value="12px">12px</option>
+            <option value="14px">14px</option>
+            <option value="16px">16px</option>
+            <option value="18px">18px</option>
+            <option value="20px">20px</option>
+            <option value="24px">24px</option>
+            <option value="28px">28px</option>
+        </select>
+
+
+        <span class="material-symbols-outlined">
+            format_bold
+        </span>
+        <span class="material-symbols-outlined">
+            format_italic
+        </span>
+
+        <span class="material-symbols-outlined">
+            format_underlined
+        </span>
+        <span class="material-symbols-outlined">
+            format_align_left
+        </span>
+        <span class="material-symbols-outlined">
+            format_align_center
+        </span>
+        <span class="material-symbols-outlined">
+            format_align_right
+        </span>
+    </div>
+    <div class="formula-actions-cont">
+        <input type="text" class="address-bar" readonly>
+        <span class="material-symbols-outlined">
+            function
+        </span>
+        <input type="text" class="formula-bar">
+    </div>
+    <div class="grid-cont"></div>
+    <div class="sheet-actions-cont">
+        <div class="sheet-add-icon">
+            <span class="material-symbols-outlined">
+                add_box
+            </span>
+        </div>
+        <div class="sheet-folder-count">
+            <div class="sheet-folder">
+                Sheet1
+            </div>
+            <div class="sheet-folder">
+                Sheet1
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* Setting defult styling */
+  padding: 0;
+  margin: 0;
+}
+/* Page actions START */
+.page-actions-cont {
+  height: 2.5rem;
+  background-color: #127b3e;
+  display: flex;
+  font-size: 0.9rem;
+  align-items: flex-end;
+  padding-left: 1rem;
+}
+.page-action {
+  margin: 0.5rem;
+  color: #f1f2f6;
+}
+
+/* Page actions END */
+
+/* cell properties START */
+.cellprop-actions-cont {
+  height: 2.5rem;
+  background: #dfe6e9;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+}
+.cellprop-actions-cont > * {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.cellprop-actions-cont > select {
+  border: none;
+  border-radius: 2px;
+  outline: none;
+}
+.font-family-prop {
+  padding: 0.2rem;
+}
+.font-size-group {
+  padding: 0.2rem;
+}
+/* cell properties END */
+
+/* formula actions START  */
+.formula-actions-cont {
+  padding-left: .6rem;
+  padding-right: .5rem;
+  height: 2rem;
+  background: #dfe6e9;
+  display: flex;
+  align-items: center;
+}
+
+.formula-actions-cont > input{
+    border: none;
+    outline: none;
+    height: 70%;
+}
+.formula-actions-cont > *{
+    display: inline-block;
+    margin-left: .5rem;
+}
+.formula-bar{
+    width: calc(100vw - 5rem - .5rem - .5rem);
+}
+.address-bar{
+    width: 5rem;
+}
+/* formula actions END  */
+
+/* Sheet folder actions START*/
+.sheet-actions-cont {
+  height: 2rem;
+  background: #dfe6e9;
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  gap: 1rem;
+}
+.sheet-actions-cont > * {
+  display: inline-block;
+}
+.sheet-add-icon {
+  width: 2vw;
+}
+
+.sheet-folder-count {
+  height: 80%;
+  /* we are setting height to the sheets list */
+  width: calc(100vw - 2vw);
+  display: flex;
+  align-items: center;
+}
+.sheet-folder {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+/* Sheet folder actions END*/
+
+
+/* GRID cells START */
+.grid-cont {
+  /*NOTE: we are seeting sheet height after substracting the heights of{page-actions,cellprop,formula-action,sheet-action} */
+  /* 3rem + 3rem + 3rem + 3rem */
+  height: calc(100vh - 2.5rem - 2.5rem - 2rem - 2rem);
+}
+/* GRID cells END */
+
