@@ -50,28 +50,29 @@ body {
 
 /* formula actions START  */
 .formula-actions-cont {
-  padding-left: .6rem;
-  padding-right: .5rem;
+  padding-left: 0.6rem;
+  padding-right: 0.5rem;
   height: 2rem;
   background: #dfe6e9;
   display: flex;
   align-items: center;
 }
 
-.formula-actions-cont > input{
-    border: none;
-    outline: none;
-    height: 70%;
+.formula-actions-cont > input {
+  border: none;
+  outline: none;
+  height: 70%;
 }
-.formula-actions-cont > *{
-    display: inline-block;
-    margin-left: .5rem;
+.formula-actions-cont > * {
+  display: inline-block;
+  margin-left: 0.5rem;
 }
-.formula-bar{
-    width: calc(100vw - 5rem - .5rem - .5rem);
+.formula-bar {
+  width: calc(100vw - 5rem - 0.5rem - 0.5rem);
 }
-.address-bar{
-    width: 5rem;
+.address-bar {
+  text-align: center;
+  width: 5rem;
 }
 /* formula actions END  */
 
@@ -108,12 +109,64 @@ body {
 }
 /* Sheet folder actions END*/
 
-
 /* GRID cells START */
 .grid-cont {
   /*NOTE: we are seeting sheet height after substracting the heights of{page-actions,cellprop,formula-action,sheet-action} */
   /* 3rem + 3rem + 3rem + 3rem */
   height: calc(100vh - 2.5rem - 2.5rem - 2rem - 2rem);
+  position: relative;
+  overflow: auto;
+  background: #ecf0f1;
 }
-/* GRID cells END */
 
+.top-left-dummy-box {
+  height: 1.5rem;
+  width: 2rem;
+  position: fixed;
+  z-index: 1;
+  background-color: gray;
+}
+.address-bar-row-cont {
+  display: flex;
+  position: sticky;
+  top: 0;
+  left: 2rem;
+}
+.address-row {
+  width: 5rem;
+  height: 1.5rem;
+  border: 1px solid #d2dae2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .6rem;
+}
+.address-bar-col-cont {
+  position: sticky;
+  top: 2rem;
+  left: 0;
+}
+.address-col {
+  width: 2rem;
+  height: 1.5rem;
+  border: 1px  solid #d2dae2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cells-cont {
+  position: absolute;
+  top: 0;
+  left: 2rem;
+}
+.row-cont{
+    display: flex;
+}
+.cell-cont{
+    width: 5rem;
+    height: 1.5rem;
+    outline: none;
+    border: 1px solid #bdc3c7;
+}
+
+/* GRID cells END */
