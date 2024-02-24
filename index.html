@@ -24,6 +24,7 @@
             content_paste
         </span>
         <select id="fontSelector" class="font-family-prop">
+            <option value="Monospace">Monospace</option>
             <option value="Arial">Arial</option>
             <option value="Helvetica">Helvetica</option>
             <option value="Times New Roman">Times New Roman</option>
@@ -35,39 +36,43 @@
             <option value="Arial Black">Arial Black</option>
             <option value="Impact">Impact</option>
         </select>
-        <select id="fontSizeSelector" class="font-size-group">
-            <option value="1px">1px</option>
-            <option value="5px">5px</option>
-            <option value="10px">10px</option>
-            <option value="12px">12px</option>
-            <option value="14px">14px</option>
-            <option value="16px">16px</option>
-            <option value="18px">18px</option>
-            <option value="20px">20px</option>
-            <option value="24px">24px</option>
-            <option value="28px">28px</option>
+        <select id="fontSizeSelector" class="font-size-prop">
+            <option value="14">14</option>
+            <option value="16">16</option>
+            <option value="18">18</option>
+            <option value="20">20</option>
         </select>
-
-
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined bold">
             format_bold
         </span>
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined italic">
             format_italic
         </span>
 
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined underline">
             format_underlined
         </span>
-        <span class="material-symbols-outlined">
+        <span class="left material-symbols-outlined alignment">
             format_align_left
         </span>
-        <span class="material-symbols-outlined">
+        <span class="center material-symbols-outlined alignment">
             format_align_center
         </span>
-        <span class="material-symbols-outlined">
+        <span class="right material-symbols-outlined alignment">
             format_align_right
         </span>
+        <div class="color-prop">
+            <span class="material-symbols-outlined font-color">
+                format_color_text
+            </span>
+            <input type="color" class="font-color-prop" >
+        </div>
+        <div class="color-prop">
+            <span class="material-symbols-outlined bg-color">
+                format_color_fill
+            </span>
+            <input type="color" class="font-bgcolor-prop">
+        </div>
     </div>
     <div class="formula-actions-cont">
         <input type="text" class="address-bar" readonly>
@@ -99,7 +104,8 @@
         </div>
     </div>
 
-    <script type="module" src="./script.js"></script>
+    <script src="./grid.js"></script>
+    <script src="cell-prop-actions.js"></script>
 </body>
 
 </html>

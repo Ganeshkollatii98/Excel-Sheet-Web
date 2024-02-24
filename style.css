@@ -26,7 +26,7 @@ body {
 /* cell properties START */
 .cellprop-actions-cont {
   height: 2.5rem;
-  background: #dfe6e9;
+  background: #ecf0f1;
   display: flex;
   align-items: center;
   padding-left: 1rem;
@@ -34,6 +34,10 @@ body {
 .cellprop-actions-cont > * {
   display: inline-block;
   margin-right: 0.5rem;
+  cursor: pointer;
+}
+.cellprop-actions-cont > * :hover {
+  cursor: pointer;
 }
 .cellprop-actions-cont > select {
   border: none;
@@ -46,6 +50,16 @@ body {
 .font-size-group {
   padding: 0.2rem;
 }
+.color-prop{
+  position: relative;
+}
+.color-prop > input{
+   opacity: 0;
+   position: absolute;
+   top:0;
+   left: 0px;
+   height: 100%;
+}
 /* cell properties END */
 
 /* formula actions START  */
@@ -53,7 +67,7 @@ body {
   padding-left: 0.6rem;
   padding-right: 0.5rem;
   height: 2rem;
-  background: #dfe6e9;
+  background: #ecf0f1;
   display: flex;
   align-items: center;
 }
@@ -117,6 +131,7 @@ body {
   position: relative;
   overflow: auto;
   background: #ecf0f1;
+  font-family: Arial;
 }
 
 .top-left-dummy-box {
@@ -166,7 +181,9 @@ body {
     width: 5rem;
     height: 1.5rem;
     outline: none;
+    font-size: 18px;
     border: 1px solid #bdc3c7;
+    font-weight: normal;
 }
 
 /* GRID cells END */
