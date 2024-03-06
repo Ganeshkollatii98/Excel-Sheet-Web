@@ -45,16 +45,57 @@ formulaBar.addEventListener("keydown", (event) => {
     if (cellProp.formula != inputFormula)
       removeChildFromParent(cellProp.formula);
 
+    addChildToGraphComponent(inputFormula, address);
+    // check formula is cyclic or not ,then only evalute
+    //  return True if cyclic return false if not cyclic
+    console.log("added", graphComponentMatrix)
+
+    let isCyclic = isGraphCyclic();
+    if (isCyclic) {
+      alert("Your formula is cyclic");
+      removeChildFromGraphComponent(inputFormula, address);
+      console.log("cyc", graphComponentMatrix)
+      return;
+    }
+    console.log(graphComponentMatrix)
     let evalutedValue = evaluteFormula(inputFormula);
 
     //  Update UI and cellProp in DB
     setCellUIandCellProp(evalutedValue, inputFormula, address);
     addChildToParent(inputFormula);
-    console.log(sheetDB);
 
     updateChildrenCells(address);
   }
 });
+
+let addChildToGraphComponent = (formula, childAddress) => {
+  // Example: formula is A1+10  and childAddress is B1
+  let [ccid, crid] = decodeRIDCIDfromAddress(childAddress);
+  let encodedFormula = formula.split(' ');
+  for (let encodeAdd of encodedFormula) {
+    let assciiValue = encodeAdd.charCodeAt(0);
+    if (assciiValue >= 65 && assciiValue <= 90) {
+      // we got A1 location [0,0]
+      let [pcid, prid] = decodeRIDCIDfromAddress(encodeAdd);
+      graphComponentMatrix[pcid][prid].push([ccid, crid]);
+    }
+  }
+}
+
+let removeChildFromGraphComponent = (formula, childAddress) => {
+  // Example: formula is A1+10  and childAddress is B1
+  let [ccid, crid] = decodeRIDCIDfromAddress(childAddress);
+  let encodedFormula = formula.split(' ');
+  for (let encodeAdd of encodedFormula) {
+    let assciiValue = encodeAdd.charCodeAt(0);
+    if (assciiValue >= 65 && assciiValue <= 90) {
+      // we got A1 location [0,0]
+      let [pcid, prid] = decodeRIDCIDfromAddress(encodeAdd);
+      //  whatever cycleic address inserted we are removing that
+      graphComponentMatrix[pcid][prid].pop();
+    }
+  }
+}
 
 let addChildToParent = (formula) => {
   /* 
