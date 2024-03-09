@@ -11,16 +11,19 @@
 <body>
     <div class="page-actions-cont">
         <div class="page-action">Home</div>
-        <div class="page-action">File</div>
+        <div class="page-action selecte-page-action">File</div>
         <div class="page-action">Insert</div>
         <div class="page-action">Layout</div>
         <div class="page-action">Help</div>
     </div>
     <div class="cellprop-actions-cont">
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined cut">
+            cut
+            </span>
+        <span class="material-symbols-outlined copy">
             content_copy
         </span>
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined paste">
             content_paste
         </span>
         <select id="fontSelector" class="font-family-prop">
@@ -65,7 +68,7 @@
             <span class="material-symbols-outlined font-color">
                 format_color_text
             </span>
-            <input type="color" class="font-color-prop" >
+            <input type="color" class="font-color-prop">
         </div>
         <div class="color-prop">
             <span class="material-symbols-outlined bg-color">
@@ -73,6 +76,13 @@
             </span>
             <input type="color" class="font-bgcolor-prop">
         </div>
+        <span class="material-symbols-outlined download">
+            cloud_download
+            </span>
+        <span class="material-symbols-outlined open">
+            cloud_upload
+        </span>
+       
     </div>
     <div class="formula-actions-cont">
         <input type="text" class="address-bar" readonly>
@@ -91,23 +101,22 @@
     <div class="sheet-actions-cont">
         <div class="sheet-add-icon">
             <span class="material-symbols-outlined">
-                add_box
+                add_circle
             </span>
         </div>
         <div class="sheet-folder-count">
-            <div class="sheet-folder">
-                Sheet1
-            </div>
-            <div class="sheet-folder">
-                Sheet1
-            </div>
+
         </div>
     </div>
 
-    <script src="./grid.js"></script>
-    <script src="cell-prop-actions.js"></script>
+    <script src="grid.js"></script>
     <script src="cycleValidation.js"></script>
+    <script src="sheetHandler.js"></script>
+    <script src="cell-prop-actions.js"></script>
+    <script src="cyclicPathTrace.js"></script>
     <script src="formula.js"></script>
+    <script src="cutCopyPaste.js"></script>
+    <script src="openSave.js"></script>
 </body>
 
 </html>

@@ -19,12 +19,11 @@ allCells.forEach((cell) => {
 
     /* 
        Changing already set value - hardcoded value
- - When user have formula in that cell. but 
-   he typed some value on cell. so
-   Step-1 there is no use of formula right need to romove that formula
- - Parent child relation also to be removed
- - update children cells
-  
+      - When user have formula in that cell. but 
+        he typed some value on cell. so
+       Step-1 there is no use of formula right need to romove that formula
+      - Parent child relation also to be removed
+      - update children cells
     */
     removeChildFromParent(cellProperties.formula);
     cellProperties.formula = "";
@@ -35,7 +34,7 @@ allCells.forEach((cell) => {
 // formula evalution
 let formulaBar = document.querySelector(".formula-bar");
 
-formulaBar.addEventListener("keydown", (event) => {
+formulaBar.addEventListener("keydown", async (event) => {
   let inputFormula = formulaBar.value;
   if (inputFormula && event.key === "Enter") {
     // if there is chanage in previous formula and current formula,
@@ -48,16 +47,19 @@ formulaBar.addEventListener("keydown", (event) => {
     addChildToGraphComponent(inputFormula, address);
     // check formula is cyclic or not ,then only evalute
     //  return True if cyclic return false if not cyclic
-    console.log("added", graphComponentMatrix)
 
-    let isCyclic = isGraphCyclic();
-    if (isCyclic) {
-      alert("Your formula is cyclic");
+    let cycleResponse = isGraphCyclic();
+    if (cycleResponse) {
+      let response = confirm("Your formula is cyclic.Do you want to trace your path?");
+      while (response) {
+        //  Keep on tracking color until user is satisfied
+        await isGraphCyclicTracePath(graphComponentMatrix, cycleResponse);
+        response = confirm("Your formula is cyclic.Do you want to trace your path?");
+      }
+
       removeChildFromGraphComponent(inputFormula, address);
-      console.log("cyc", graphComponentMatrix)
       return;
     }
-    console.log(graphComponentMatrix)
     let evalutedValue = evaluteFormula(inputFormula);
 
     //  Update UI and cellProp in DB

@@ -48,9 +48,7 @@ function addListenerForAddressBarDisplay(cell,row,col){
     })
 }
 
-// By Default click on first cell and diaply that address in addressBar input via DOM
-let cell =  document.querySelector('.cell-cont')
-cell.click();
+
 
 
 

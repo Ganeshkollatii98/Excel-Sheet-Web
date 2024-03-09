@@ -5,10 +5,13 @@
                   row2 [],
                   row3 [],
                   row4 [],
+                  .
+                  .
                   ] 
 */
-
+let collectedGraphComponentMatrix = []
 let graphComponentMatrix = []
+/* 
 for (let i = 0; i < rows; i++) {
   let row = [];
   for (let j = 0; j < cols; j++) {
@@ -16,8 +19,7 @@ for (let i = 0; i < rows; i++) {
   }
   graphComponentMatrix.push(row)
 }
-
-console.log(graphComponentMatrix)
+*/
 //return  true - cyclic false - not cyclic
 let isGraphCyclic = () => {
   /* 
@@ -33,11 +35,11 @@ let isGraphCyclic = () => {
       if (visited[i][j] === false) {
         let response = dfsCycleDetection(graphComponentMatrix, i, j, visited, pathVisited);
         // Found cycle so return immediately, no need to explore more path
-        if (response == true) return true;
+        if (response == true) return [i, j];
       }
     }
   }
-  return false;
+  return null;
 }
 
 /* Start -> vis(TRUE) dfsVis(TRUE)

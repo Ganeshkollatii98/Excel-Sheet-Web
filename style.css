@@ -9,7 +9,7 @@ body {
 }
 /* Page actions START */
 .page-actions-cont {
-  height: 2.5rem;
+  height: 3rem;
   background-color: #127b3e;
   display: flex;
   font-size: 0.9rem;
@@ -17,8 +17,18 @@ body {
   padding-left: 1rem;
 }
 .page-action {
-  margin: 0.5rem;
+  width:3.5rem;
+  height: 2rem;
+  text-align:center;
   color: #f1f2f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.selecte-page-action{
+  background-color: white;
+  color: #127b3e;
 }
 
 /* Page actions END */
@@ -105,10 +115,13 @@ body {
 }
 .sheet-add-icon {
   width: 2vw;
+  cursor: pointer;
+
 }
 
 .sheet-folder-count {
-  height: 80%;
+  overflow:auto ;
+  height: 100%;
   /* we are setting height to the sheets list */
   width: calc(100vw - 2vw);
   display: flex;
@@ -119,7 +132,12 @@ body {
   text-decoration-thickness: 3px;
   font-weight: bold;
   font-size: 0.8rem;
-  margin-left: 0.5rem;
+  padding: .3rem;
+  margin-left:.5rem;
+  margin-right:.5rem;
+}
+.sheet-folder:hover{
+  cursor: default;
 }
 /* Sheet folder actions END*/
 
@@ -127,7 +145,7 @@ body {
 .grid-cont {
   /*NOTE: we are seeting sheet height after substracting the heights of{page-actions,cellprop,formula-action,sheet-action} */
   /* 3rem + 3rem + 3rem + 3rem */
-  height: calc(100vh - 2.5rem - 2.5rem - 2rem - 2rem);
+  height: calc(100vh - 3rem - 2.5rem - 2rem - 2rem);
   position: relative;
   overflow: auto;
   background: #ecf0f1;

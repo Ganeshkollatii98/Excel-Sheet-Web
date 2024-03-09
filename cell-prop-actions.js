@@ -1,4 +1,11 @@
+let collectedSheetsDB = [];
 let sheetDB = [];
+
+{
+  let addIcon = document.querySelector('.sheet-add-icon')
+  addIcon.click();
+}
+/* 
 // [[cel1Db,cell2Db...],[cel1Db,cell2Db...],[cel1Db,cell2Db...],[cel1Db,cell2Db...]]
 // Adding new object to every [row][col] to access
 for (let i = 0; i < rows; i++) {
@@ -20,7 +27,7 @@ for (let i = 0; i < rows; i++) {
     sheetRow.push(cellProp);
   }
   sheetDB.push(sheetRow);
-}
+} */
 
 // Selectors
 let bold = document.querySelector(".bold");
@@ -203,10 +210,10 @@ function addListenerToAttachCellProperties(cell) {
         rightAlign.style.backgroundColor = activeColorProp;
         break;
     }
-    
+
     let formulaBar = document.querySelector(".formula-bar");
     formulaBar.value = cellProp.formula;
-    cell.value = cellProp.value;
+    cell.innerText = cellProp.value;
   });
 }
 
